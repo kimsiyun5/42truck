@@ -1,0 +1,78 @@
+extends base.pug
+
+block styles
+  link(rel="stylesheet", href="css/order.css")
+
+block content
+  .container
+      h1 주문
+      form(action='/order', method='POST')#orderForm
+        .products
+          //- Product 1
+          .product
+            img(src="images/hot_dog.jpg", alt="핫도그")
+            div
+              .product-info
+                strong 핫도그
+                p Enter description
+              .quantity-controls
+                button(type="button", onclick="updateQuantity(-1, 'hot_dog')") -
+                input(type="number", id="hot_dog", name="hot_dog", value="0", min="0")
+                button(type="button", onclick="updateQuantity(1, 'hot_dog')") +
+              p
+                span.price(data-price="3000") 3000
+                |  원
+          //- Product 2
+          .product
+            img(src="images/bake.jpeg", alt="불고기 베이크")
+            div
+              .product-info
+                strong 불고기 베이크
+                p Enter description
+              .quantity-controls
+                button(type="button", onclick="updateQuantity(-1, 'bake')") -
+                input(type="number", id="bake", name="bake", value="0", min="0")
+                button(type="button", onclick="updateQuantity(1, 'bake')") +
+              p
+                span.price(data-price="6000") 6000
+                |  원
+          //- Product 3
+          .product
+            img(src="images/pizza.png", alt="피자")
+            div
+              .product-info
+                strong 피자
+                p Enter description
+              .quantity-controls
+                button(type="button", onclick="updateQuantity(-1, 'pizza')") -
+                input(type="number", id="pizza", name="pizza", value="0", min="0")
+                button(type="button", onclick="updateQuantity(1, 'pizza')") +
+              p
+                span.price(data-price="20000") 20000
+                |  원
+        .form-section.total
+          p 총합: 
+            span#totalPrice 0
+            |  원
+        //- User Information
+        .form-section
+          h2 주문자 정보
+          label(for="intraID") IntraID
+          input(type="text", id="intraID", name="intraID", required)
+
+        .form-section
+          label(for="orderer") 주문자 성명
+          input(type="text", id="orderer", name="orderer", required)
+
+        .form-section
+          label(for="phone_number") 전화번호
+          input(type="tel", id="phone_number", name="phone_number", placeholder=" 010-1234-5678", required)
+
+        .form-section
+          label(for="comments") 문의 사항
+          textarea(id="comments", name="comments", rows="4")
+
+        button(type="submit", class="submit-btn") 주문하기
+
+block scripts
+  script(type="text/javascript", src="js/order.js")

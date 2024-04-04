@@ -1,0 +1,124 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  color: #333;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  margin-top: 20px;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.product:nth-child(2) img {
+  border-radius: 0;
+}
+
+.product > div {
+  padding: 0 20px;
+}
+.product > div > p {
+  text-align: right;
+}
+
+.product-info strong {
+  display: block;
+  color: #e32a36;
+  margin-bottom: 5px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  gap: 15px;
+}
+.quantity-controls button {
+  background-color: #e32a36;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.quantity-controls input {
+  width: 50px;
+  flex-grow: 1;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.form-section {
+  margin-top: 20px;
+}
+.form-section h2 {
+  margin-bottom: 25px;
+}
+.form-section label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: bold;
+}
+.form-section input, .form-section textarea {
+  width: 100%;
+  padding: 8px 0;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.total {
+  font-size: 20px;
+  text-align: right;
+  margin-top: 0;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 15px;
+}

@@ -1,0 +1,9 @@
+{
+  "exec": "babel-node src/init.js",
+  "ext": "js",
+  "ignore": [
+    "dist",
+    "src/dist",
+    "src/client"
+  ]
+}
