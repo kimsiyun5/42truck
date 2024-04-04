@@ -4,8 +4,8 @@
   "description": "Co42co",
   "main": "src/index.js",
   "scripts": {
-    "dev:back": "nodemon",
-    "dev:front": "gulp watch",
+    "back:dev": "nodemon",
+    "front:dev": "gulp watch",
     "build": "babel src --out-dir dist && gulp build",
     "restart": "pm2 restart 42truck",
     "start": "pm2 start ecosystem.config.js --env production"
