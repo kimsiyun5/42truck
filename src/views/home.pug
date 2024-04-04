@@ -1,19 +1,17 @@
-doctype html
-html(lang="ko")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title 42truck
-    link(rel="stylesheet", href="css/home.css")
-  body
-    .container
-      .row
-        img(src="images/42truck_logo.png", alt="42truck")
+extends base.pug
 
-        .col
-          a(href="/order" class="fb btn")
-            |  주문하기
-          a(href="/confirm" class="twitter btn")
-            i.fa.fa-twitter.fa-fw
-            |  주문 확인하기
+block styles
+  link(rel="stylesheet", href="css/home.css")
+
+block content
+  .container
+    .row
+      img(src="images/42truck_logo.png", alt="42truck")
+
+      .col
+        a(href="/order" class="fb btn")
+          |  주문하기
+        a(href="/confirm" class="twitter btn")
+          i.fa.fa-twitter.fa-fw
+          |  주문 확인하기
 

@@ -1,36 +1,34 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title 주문 완료
-    link(rel="stylesheet", href="css/status.css")
-    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
-  body
-    .container
-      .order-confirmation
-        h1 주문이 완료되었습니다!
-        .order-details
-          .order-total
-            span.label 총 주문금액: 
-            span.amount #{totalPrice.toLocaleString('ko-KR')}원
-        .bank-number 입금 계좌: 
-          span 우리 1002-760545681
-            i.far.fa-copy
+extends base.pug
 
-      .info-section
-        .info-block
-          h2 주문자 정보
-          p IntraID: #{order.intraID}
-          p 성명: #{order.orderer}
-          p 전화번호: #{order.phone_number}
-          p 요청 사항: #{order.comments}
+block styles
+  link(rel="stylesheet", href="css/status.css")
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
 
-        .info-block
-          h2 주문 내역
-          div
-            p 핫도그: #{order.menu.hot_dog} 개
-            p 베이크: #{order.menu.bake} 개
-            p 피자: #{order.menu.pizza} 개
-      p 입금 확인 후 최종 주문이 완료됩니다.
-    script(src="js/status.js" type="text/javascript") 
+block content
+  .container
+    .order-confirmation
+      h1 주문이 완료되었습니다!
+      .order-details
+        .order-total
+          span.label 총 주문금액: 
+          span.amount #{totalPrice.toLocaleString('ko-KR')}원
+      .bank-number 입금 계좌: 
+        span 우리 1002-760545681
+          i.far.fa-copy
+
+    .info-section
+      .info-block
+        h2 주문자 정보
+        p IntraID: #{order.intraID}
+        p 성명: #{order.orderer}
+        p 전화번호: #{order.phone_number}
+        p 요청 사항: #{order.comments}
+
+      .info-block
+        h2 주문 내역
+        div
+          p 핫도그: #{order.menu.hot_dog} 개
+          p 베이크: #{order.menu.bake} 개
+          p 피자: #{order.menu.pizza} 개
+    p 입금 확인 후 최종 주문이 완료됩니다.
+  script(src="js/status.js" type="text/javascript") 
