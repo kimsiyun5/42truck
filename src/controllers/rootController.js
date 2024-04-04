@@ -1,5 +1,5 @@
 export const home = (req, res) => {
-  return res.redirect("/order");
+  return res.render("home");
 }
 
 export const status = (req, res) => {

@@ -3,6 +3,7 @@
   "ext": "js",
   "ignore": [
     "dist",
+    "public",
     "src/dist",
     "src/client"
   ]
