@@ -98,8 +98,9 @@ p {
   font-weight: bold;
 }
 .form-section input, .form-section textarea {
+  box-sizing: border-box;
   width: 100%;
-  padding: 8px 0;
+  padding: 8px;
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;

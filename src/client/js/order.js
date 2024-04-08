@@ -8,25 +8,26 @@ function updateQuantity(change, id) {
 
 function updateTotal() {
   var total = 0;
-  var prices = document.querySelectorAll('.price');
-  var quantities = document.querySelectorAll('.quantity-controls input');
-  prices.forEach(function(price, index) {
-    total += parseInt(price.getAttribute('data-price')) * quantities[index].value;
+  var prices = document.querySelectorAll(".price");
+  var quantities = document.querySelectorAll(".quantity-controls input");
+  prices.forEach(function (price, index) {
+    total +=
+      parseInt(price.getAttribute("data-price")) * quantities[index].value;
   });
-  document.getElementById('totalPrice').innerText = total;
+  document.getElementById("totalPrice").innerText = total;
 }
 
 // Initialize total price
-document.addEventListener('DOMContentLoaded', updateTotal);
+document.addEventListener("DOMContentLoaded", updateTotal);
 
-const quantities = document.querySelectorAll('.quantity-controls input');
-quantities.forEach(function(price, index) {
-  quantities[index].addEventListener('input', (event) => updateTotal());
+const quantities = document.querySelectorAll(".quantity-controls input");
+quantities.forEach(function (price, index) {
+  quantities[index].addEventListener("input", (event) => updateTotal());
 });
 
-const orderForm = document.getElementById('orderForm');
-orderForm.addEventListener('submit', (e) => {
-  const totalPrice = document.getElementById('totalPrice').innerText;
+const orderForm = document.getElementById("orderForm");
+orderForm.addEventListener("submit", (e) => {
+  const totalPrice = document.getElementById("totalPrice").innerText;
   if (parseInt(totalPrice) == 0) {
     e.preventDefault();
     alert("최소 1개 이상 주문하셔야 합니다.");
