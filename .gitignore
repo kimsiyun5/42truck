@@ -15,4 +15,6 @@ dist/
 .DS_Store
 
 # public directory
-public
+public/js
+public/css
+public/images
